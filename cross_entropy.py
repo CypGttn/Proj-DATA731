@@ -26,7 +26,7 @@ def get_season_dates(season, year=1940):
     return start_date, end_date
 
 # Sélectionner une ville
-city = 'CALGARY'
+city = 'VANCOUVER'
 
 # Calculer l'entropie croisée pour chaque année de 1941 à 2020
 years = list(range(1941, 2021))
