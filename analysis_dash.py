@@ -152,7 +152,7 @@ def get_interval__(season): # marge de 7j de chaque coté
         res = [datetime(1940, 12, 7),datetime(1940, 2, 22)]
     return res
 
-def get_interval___(season): # marge de 15j de chaque coté
+def get_interval(season): # marge de 15j de chaque coté
     res = ""
     if season == "spring":
         res = [datetime(1940, 3, 15),datetime(1940, 5, 15)]
@@ -164,7 +164,7 @@ def get_interval___(season): # marge de 15j de chaque coté
         res = [datetime(1940, 12, 15),datetime(1940, 2, 15)]
     return res
 
-def get_interval(season): # marge de 30j de chaque coté
+def get_interval___(season): # marge de 30j de chaque coté
     res = ""
     if season == "spring":
         res = [datetime(1940, 3, 30),datetime(1940, 5, 1)]
