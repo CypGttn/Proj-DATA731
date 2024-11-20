@@ -37,13 +37,13 @@ plt.show()
 def get_interval(season):
     res = ""
     if season == "spring":
-        res = [datetime(1940, 3, 20),datetime(1940, 6, 20)]
+        res = [datetime(1940, 3, 1),datetime(1940, 5, 31)]
     if season == "summer":
-        res = [datetime(1940, 6, 21),datetime(1940, 9, 21)]
+        res = [datetime(1940, 6, 1),datetime(1940, 8, 31)]
     if season == "autumn":
-        res = [datetime(1940, 9, 22),datetime(1940, 12, 20)]
+        res = [datetime(1940, 9, 1),datetime(1940, 11, 30)]
     if season == "winter":
-        res = [datetime(1940, 12, 21),datetime(1940, 3, 19)]
+        res = [datetime(1940, 12, 1),datetime(1940, 2, 28)]
     return res
 
 city_list = ["CALGARY","MONCTON","OTTAWA","TORONTO","VANCOUVER","WINNIPEG"]
