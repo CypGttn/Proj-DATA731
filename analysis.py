@@ -24,7 +24,7 @@ plt.ylabel('Température (°C)')
 plt.title('Températures des villes en fonction du temps')
 
 # Option pour afficher ou masquer la légende
-show_legend = False  # Modifiez ici à False pour masquer la légende
+show_legend = True  # Modifiez ici à False pour masquer la légende
 
 if show_legend:
     plt.legend()
