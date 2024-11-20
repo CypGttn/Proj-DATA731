@@ -13,7 +13,7 @@ df = pd.read_csv('canadian_climate_change_history_updated.csv')
 df['LOCAL_DATE'] = pd.to_datetime(df['LOCAL_DATE'], format='%d-%b-%Y %H:%M:%S')
 
 # Liste des villes pour le dropdown
-city_list = ["CALGARY", "MONCTON", "OTTAWA", "TORONTO", "VANCOUVER", "WINNIPEG"]
+city_list = ["CALGARY", "OTTAWA", "TORONTO", "VANCOUVER", "WINNIPEG"]
 
 # Initialiser l'application Dash
 app = dash.Dash(__name__)
@@ -89,9 +89,9 @@ def update_graph(selected_city):
                    [datetime(2016, 9, 15),datetime(2016, 11, 15)],
                    [datetime(2017, 9, 15),datetime(2017, 11, 15)]]
         if season == "winter":
-            res = [[datetime(2015, 12, 15),datetime(2015, 2, 15)],
-                   [datetime(2016, 12, 15),datetime(2016, 2, 15)],
-                   [datetime(2017, 12, 15),datetime(2017, 2, 15)]]
+            res = [[datetime(2015, 12, 15),datetime(2016, 2, 15)],
+                   [datetime(2016, 12, 15),datetime(2017, 2, 15)],
+                   [datetime(2017, 12, 15),datetime(2018, 2, 15)]]
         return res
 
     
@@ -115,7 +115,10 @@ def update_graph(selected_city):
         
         season_divergences = []
         for year in years:
-            filtered_df1 = df[(df['LOCAL_DATE'] >= start_date) & (df['LOCAL_DATE'] <= end_date)]
+            filtered_df1 = df[
+                            (df['LOCAL_DATE'] >= start_date) & (df['LOCAL_DATE'] <= end_date) | 
+                            (df['LOCAL_DATE'] >= start_date.replace(year=end_date.year + 1)) & (df['LOCAL_DATE'] <= end_date.replace(year=end_date.year + 1)) |
+                            (df['LOCAL_DATE'] >= start_date.replace(year=end_date.year + 2)) & (df['LOCAL_DATE'] <= end_date.replace(year=end_date.year + 2))]
             
             u = filtered_df1[temperature_col]
             v = filtered_df_ref[temperature_col]
