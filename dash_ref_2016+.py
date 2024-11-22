@@ -154,16 +154,6 @@ def update_graph(selected_city):
 
     return temperature_figure, divergence_figure
 
-"""def get_interval(season):
-    if season == "spring":
-        return [datetime(1940, 3, 20), datetime(1940, 6, 20)]
-    if season == "summer":
-        return [datetime(1940, 6, 21), datetime(1940, 9, 21)]
-    if season == "autumn":
-        return [datetime(1940, 9, 22), datetime(1940, 12, 20)]
-    if season == "winter":
-        return [datetime(1940, 12, 21), datetime(1940, 3, 19)]"""
-
 def get_interval_(season): # sans marge
     res = ""
     if season == "spring":
@@ -176,17 +166,6 @@ def get_interval_(season): # sans marge
         res = [datetime(1940, 12, 1),datetime(1940, 2, 28)]
     return res
 
-def get_interval__(season): # marge de 7j de chaque coté
-    res = ""
-    if season == "spring":
-        res = [datetime(1940, 3, 7),datetime(1940, 5, 22)]
-    if season == "summer":
-        res = [datetime(1940, 6, 7),datetime(1940, 8, 22)]
-    if season == "autumn":
-        res = [datetime(1940, 9, 7),datetime(1940, 11, 22)]
-    if season == "winter":
-        res = [datetime(1940, 12, 7),datetime(1940, 2, 22)]
-    return res
 
 def get_interval(season): # marge de 15j de chaque coté
     res = ""
@@ -199,19 +178,6 @@ def get_interval(season): # marge de 15j de chaque coté
     if season == "winter":
         res = [datetime(1940, 12, 15),datetime(1940, 2, 15)]
     return res
-
-def get_interval___(season): # marge de 30j de chaque coté
-    res = ""
-    if season == "spring":
-        res = [datetime(1940, 3, 30),datetime(1940, 5, 1)]
-    if season == "summer":
-        res = [datetime(1940, 6, 30),datetime(1940, 8, 1)]
-    if season == "autumn":
-        res = [datetime(1940, 9, 30),datetime(1940, 11, 1)]
-    if season == "winter":
-        res = [datetime(1940, 12, 30),datetime(1940, 2, 1)]
-    return res
-
 
 
 # Exécuter l'application
